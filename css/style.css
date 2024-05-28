@@ -190,7 +190,20 @@ header .ham-burger.active span:nth-child(2){
 	text-transform: uppercase;
 	margin-top: -60px;
 	margin-bottom: 40px;
+	background-color: rgba(0, 0, 0, 0.5); 
+	padding: 10px 20px;
+	border-radius: 8px;
 	
+}
+
+.home a.offer-link {
+    color: #FFD700; /* Golden color for the link */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s ease;
+}
+
+.home a.offer-link:hover {
+    color: #FFFFFF; /* White color on hover for contrast */
 }
 
 .home h1 span{
