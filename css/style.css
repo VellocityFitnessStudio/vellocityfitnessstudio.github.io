@@ -17,14 +17,15 @@ body{
 
 /*Header*/
 
-header{
-	position:fixed;
-	left: 0px;
-	top:0px;
-	width: 100%;
-	z-index: 10;
-	background-color: #000000;
-	padding:15px 15px;
+header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1000; /* Ensure header is always on top */
+    background-color: #000000;
+    padding: 15px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional: adds shadow for depth */
 }
 header .container{
 	-webkit-display: flex;
@@ -142,15 +143,19 @@ header .ham-burger.active span:nth-child(2){
 }
 
 /*Home section*/
-.home{
-	height: 100vh;
-	background-image: url('../images/home.jpg');
-	background-size: cover;
-	padding:15px;
-	-webkit-display: flex;
-	display: flex;
-	position: relative;
+.home {
+    height: 100vh;
+    background-image: url('../images/home.jpg');
+    background-size: cover;
+    background-position: center; /* Ensure background is well positioned */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding-top: 100px; /* Add padding to push content below the header */
 }
+
+
 .home .go-down{
   position: absolute;
   bottom: 50px;
@@ -172,9 +177,10 @@ header .ham-burger.active span:nth-child(2){
 	0%{transform: translateY(0);opacity:.5}
 	100%{transform: translateY(10px);}
 }
-@keyframes goDown{
-	0%{transform: translateY(0);opacity:.5}
-	100%{transform: translateY(10px);}
+@keyframes goDown {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0.5; }
 }
 .home .container{
   -webkit-display: flex;
@@ -184,26 +190,28 @@ header .ham-burger.active span:nth-child(2){
 }
 
 .home h1 {
-    color: #FFFFFF;  /* Ensures text is white */
-    font-size: 48px;  /* Larger font size for better visibility */
-    font-weight: bold;  /* Bolder font to stand out */
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: bold;
     text-transform: uppercase;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* More pronounced text shadow */
-    margin: 0 auto;  /* Centering the text */
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for the text for better contrast */
-    padding: 20px 40px; /* More padding for better text isolation */
-    border-radius: 10px; /* Rounded corners for aesthetic */
-    width: fit-content;  /* Ensures background only covers the text */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Enhanced text shadow for better readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    padding: 20px 40px;
+    border-radius: 10px;
+    width: fit-content;
+    transition: background-color 0.5s ease; /* Smooth transition for hover effects */
 }
 
+
 .home a.offer-link {
-    color: #FFD700; /* Brighter color for clickable link for distinction */
+    color: #FFD700;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .home a.offer-link:hover {
-    color: #CCCCCC; /* Light grey on hover for subtle effect */
+    color: #FFFFFF; /* Change link color on hover for better visibility */
+    background-color: rgba(255, 215, 0, 0.5); /* Optional: Highlight background on hover */
 }
 
 .home h1 span{
