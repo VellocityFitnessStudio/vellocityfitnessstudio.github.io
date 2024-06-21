@@ -554,67 +554,86 @@ header .ham-burger.active span:nth-child(2) {
 
 
 /*Class Schedule Section*/
-.schedule{
-	padding:80px 0px;
+.schedule {
+	padding: 80px 0px;
 }
 
-.schedule .content{
-	-webkit-display: flex;
+.schedule .content {
 	display: flex;
-}
-
-.schedule .content .box{
-	flex:0 0 50%;
-	max-width: 100%;
-	padding:15px;
-}
-
-.schedule .content .text h2{
-   font-size: 30px;
-    font-weight: 500;
-    color: #000000;
-    padding: 0px 0px 20px;
-}
-
-.schedule .content .text p{
-	font-size: 15px;
-    line-height: 20px;
-    color: #222222;
-    margin: 0;
-    padding: 0px 0px 20px;
-    font-family: 'Open Sans', sans-serif;
-}
-.schedule .content .text img{
+	flex-direction: column; /* Ensures content stacks vertically */
+	align-items: center; /* Center aligns the content */
+	justify-content: center; /* Center justifies the content */
 	width: 100%;
-	transform: rotateY(180deg);
 }
 
-.schedule .content .timing .table{
+.schedule .content .box {
+	width: 100%; /* Full width to each box to center and use the maximum space */
+	padding: 15px;
+}
+
+.schedule .content .text h2 {
+	font-size: 30px;
+	font-weight: 500;
+	color: #000000;
+	padding-bottom: 20px;
+}
+
+.schedule .content .text p {
+	font-size: 15px;
+	line-height: 20px;
+	color: #222222;
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 20px;
+}
+
+/* Ensures images inside text class are not transformed */
+.schedule .content .text img {
+	width: 100%; /* Full width */
+	transform: none; /* Removes any transformation */
+}
+
+.schedule .content .timing .table {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-.schedule .content .timing .table td{
-	border:1px solid #dfdfdf;
+.schedule .content .timing .table td {
+	border: 1px solid #dfdfdf;
 	padding: 8px;
 	font-size: 15px;
 	text-align: center;
-	color:#222222;
+	color: #222222;
 }
 
-.schedule .content .timing .table tr:nth-child(even) td.day{
+.schedule .content .timing .table tr:nth-child(even) td.day {
 	background-color: #222222;
 }
-.schedule .content .timing .table tr:nth-child(odd) td.day{
+
+.schedule .content .timing .table tr:nth-child(odd) td.day {
 	background-color: #444444;
 }
-.schedule .content .timing .table tr:nth-child(1) td.day{
+
+.schedule .content .timing .table tr:nth-child(1) td.day {
 	background-color: #c11325;
 }
-.schedule .content .timing .table tr td.day{
-	color:#ffffff;
-	border-color:transparent;
+
+.schedule .content .timing .table tr td.day {
+	color: #ffffff;
+	border-color: transparent;
 }
+
+.schedule-image img {
+	width: 80%;
+	max-width: 600px; /* Limits maximum size */
+	transition: transform 0.3s ease;
+	transform: none; /* Starts without transformation */
+}
+
+.schedule-image img:hover {
+	transform: scale(2); /* Only scale up on hover, remove any flip */
+	cursor: pointer;
+}
+
 
 
 /*Gallery Section*/
